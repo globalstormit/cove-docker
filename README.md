@@ -1,6 +1,6 @@
 # cove-docker
 Cove / N-Able backup agent, Installs from web
-Based on Deiban Bookworm
+Based on Debian Bookworm
 
 Must provide CUSTOMERUID and DEVICEPROFILE as environment variables. 
 
