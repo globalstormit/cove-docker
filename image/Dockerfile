@@ -26,7 +26,7 @@ if [ -z $CUSTOMERUID ] || [ -z $DEVICEPROFILE ]; then\n\
 fi\n\
 if [ ! -f /etc/init.d/ProcessController ]; then\n\
     echo First run - downloading Cove...\n\
-    filename = "swibm#$CUSTOMERUID#$DEVICEPROFILE#.run"\n\
+    filename="swibm#$CUSTOMERUID#$DEVICEPROFILE#.run"\n\
     if [ "$RECOVERMODE" == "1" ]; then\n\
         filename = "mxb.run"\n\
         echo Recovery Mode selected\n\
