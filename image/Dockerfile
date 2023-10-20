@@ -26,7 +26,8 @@ if [ -z $CUSTOMERUID ] || [ -z $DEVICEPROFILE ]; then\n\
 fi\n\
 if [ ! -f /etc/init.d/ProcessController ]; then\n\
     echo First run - downloading Cove...\n\
-    if [[ "$RECOVERMODE" == "1" ]]; then\n\
+    filename = "swibm#$CUSTOMERUID#$DEVICEPROFILE#.run"\n\
+    if [ "$RECOVERMODE" == "1" ]; then\n\
         filename = "mxb.run"\n\
         echo Recovery Mode selected\n\
         echo\n\
@@ -34,9 +35,7 @@ if [ ! -f /etc/init.d/ProcessController ]; then\n\
         echo Device name: Device Name\n\
         echo Password: Installation Key\n\
         echo Security Code: Passphrase\n\
-        echo\n\
-    else\n\
-        filename = "swibm#$CUSTOMERUID#$DEVICEPROFILE#.run"\n\
+        echo\n\    
     fi\n\
     curl -o $filename https://cdn.cloudbackup.management/maxdownloads/mxb-linux-x86_64.run\n\
     chmod +x $filename\n\
