@@ -4,8 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 EXPOSE 5000
 
-RUN apt-get update && apt-get upgrade
-RUN apt-get -y install curl locales locales-all
+RUN apt-get update && apt-get upgrade; apt-get -y install curl locales locales-all xmlstarlet inetutils-ping dnsutils nano vim procps
 
 # Set Locale
 ENV LC_ALL=en_US.UTF-8
@@ -20,9 +19,9 @@ ENV RECOVERMODE=""
 WORKDIR /app
 # tail -f -n 1 $(find . -name "*.log")
 
-COPY startup.sh /app/startup.sh
+COPY *.sh /app/
 
-RUN chmod +x /app/startup.sh
+RUN chmod +x /app/*.sh
 
 CMD /app/startup.sh
 

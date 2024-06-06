@@ -2,6 +2,8 @@
 Cove / N-Able backup agent, Installs from web
 Based on Debian Bookworm
 
-Must provide CUSTOMERUID and DEVICEPROFILE as environment variables. 
+On first run, this image will download the latest backup agent from Cove.
 
-Set RECOVERMODE=1 to run interactive reconnection for restore.
+For a new setup, you must provide CUSTOMERUID and DEVICEPROFILE as environment variables. 
+To run interactive recovery mode, leave both variables unset.
+
